@@ -66,7 +66,7 @@ final class NtFileTest {
     void shouldReturnCorrectModifiedDate(@Mktmp final Path root) throws Exception {
         final Path file = root.resolve("zarifivoe.large");
         file.toFile().mkdir();
-        long expected = System.currentTimeMillis();
+        final long expected = System.currentTimeMillis();
         Files.setLastModifiedTime(
             file,
             FileTime.fromMillis(expected)
