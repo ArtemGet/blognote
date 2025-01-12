@@ -66,14 +66,15 @@ final class NtFileTest {
     void shouldReturnCorrectModifiedDate(@Mktmp final Path root) throws Exception {
         final Path file = root.resolve("zarifivoe.large");
         file.toFile().mkdir();
+        long expected = System.currentTimeMillis();
         Files.setLastModifiedTime(
             file,
-            FileTime.fromMillis(1_000_000_000)
+            FileTime.fromMillis(expected)
         );
         MatcherAssert.assertThat(
             "Wrong note modified date",
-            new NtFile(file).created(),
-            Matchers.equalTo(FileTime.fromMillis(1_000_000_000).toMillis())
+            new NtFile(file).modified(),
+            Matchers.equalTo(expected)
         );
     }
 
