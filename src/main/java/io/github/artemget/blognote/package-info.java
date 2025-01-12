@@ -23,9 +23,8 @@
  */
 
 /**
- * Tool for obsidian-telegram autoposting.
+ * Tracking changes in notes.
  *
  * @since 0.1
- * @see <a href="https://github.com/ArtemGet/blognote">GitHub project</a>
  */
 package io.github.artemget.blognote;
