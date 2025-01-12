@@ -31,6 +31,8 @@ import org.cactoos.io.Directory;
  * Watches for new notes.
  *
  * @since 0.1
+ * @todo #1:90min I suggest implement {@code OsNew} by adding matching logic
+ *  Overseer should accept matchers that filters only notes that are new and synch it with tojos.
  */
 @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
 public final class OsNew implements Overseer {
