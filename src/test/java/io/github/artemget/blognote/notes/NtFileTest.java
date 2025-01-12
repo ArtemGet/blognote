@@ -68,12 +68,12 @@ final class NtFileTest {
         file.toFile().mkdir();
         Files.setLastModifiedTime(
             file,
-            FileTime.fromMillis(1_000_000)
+            FileTime.fromMillis(1_000_000_000)
         );
         MatcherAssert.assertThat(
             "Wrong note modified date",
             new NtFile(file).created(),
-            Matchers.equalTo(FileTime.fromMillis(1_000_000).toMillis())
+            Matchers.equalTo(FileTime.fromMillis(1_000_000_000).toMillis())
         );
     }
 
