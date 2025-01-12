@@ -22,19 +22,47 @@
  * SOFTWARE.
  */
 
-package io.github.artemget.blognote;
+package io.github.artemget.blognote.notes;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.attribute.BasicFileAttributes;
+import org.cactoos.Text;
+import org.cactoos.text.TextOf;
 
 /**
- * Test dummy.
+ * Note file.
  *
  * @since 0.1
  */
-final class EntryTest {
-    @Test
-    void shouldAnswerWithTrue() {
-        Assertions.assertTrue(true);
+public final class NtFile implements Note {
+
+    /**
+     * Path to note.
+     */
+    private final Path path;
+
+    public NtFile(final Path path) {
+        this.path = path;
+    }
+
+    @Override
+    public Text content() {
+        return new TextOf(this.path);
+    }
+
+    @Override
+    public long created() throws IOException {
+        return this.attributes().creationTime().toMillis();
+    }
+
+    @Override
+    public long modified() throws IOException {
+        return this.attributes().lastModifiedTime().toMillis();
+    }
+
+    private BasicFileAttributes attributes() throws IOException {
+        return Files.readAttributes(this.path, BasicFileAttributes.class);
     }
 }

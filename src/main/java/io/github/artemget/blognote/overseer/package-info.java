@@ -23,8 +23,8 @@
  */
 
 /**
- * Tests.
+ * Sync notes with tojos.
  *
  * @since 0.1
  */
-package io.github.artemget.blognote;
+package io.github.artemget.blognote.overseer;

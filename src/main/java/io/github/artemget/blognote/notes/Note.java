@@ -22,9 +22,36 @@
  * SOFTWARE.
  */
 
+package io.github.artemget.blognote.notes;
+
+import java.io.IOException;
+import org.cactoos.Text;
+
 /**
- * Tests.
+ * Just a note record.
  *
  * @since 0.1
  */
-package io.github.artemget.blognote;
+public interface Note {
+
+    /**
+     * Retrieve note content.
+     *
+     * @return Content.
+     */
+    Text content();
+
+    /**
+     * Unixtime note created.
+     *
+     * @return Created at
+     */
+    long created() throws IOException;
+
+    /**
+     * Unixtime note updated.
+     *
+     * @return Updated at.
+     */
+    long modified() throws IOException;
+}

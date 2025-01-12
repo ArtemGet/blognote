@@ -22,9 +22,29 @@
  * SOFTWARE.
  */
 
+package io.github.artemget.blognote.notes;
+
+import java.nio.file.Path;
+import java.util.Collection;
+
 /**
- * Tests.
+ * Notes.
  *
  * @since 0.1
  */
-package io.github.artemget.blognote;
+public interface Notes {
+    /**
+     * Add new note.
+     *
+     * @param path Path to note
+     * @return New note.
+     */
+    Note add(Path path);
+
+    /**
+     * Retrieve notes that have not been posted yet.
+     *
+     * @return Notes to post.
+     */
+    Collection<Note> unPosted();
+}

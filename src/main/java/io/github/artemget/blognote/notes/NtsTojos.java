@@ -22,9 +22,26 @@
  * SOFTWARE.
  */
 
+package io.github.artemget.blognote.notes;
+
+import java.nio.file.Path;
+import java.util.Collection;
+
 /**
- * Tests.
+ * Tojo notes.
  *
  * @since 0.1
+ * @todo #1:90min I suggest adding tojos db dependency and
+ *  implement {@code NtsTojos}. NtTojo could be implemented if needed. Tests are required.
  */
-package io.github.artemget.blognote;
+public final class NtsTojos implements Notes {
+    @Override
+    public Note add(final Path path) {
+        throw new UnsupportedOperationException("not implemented");
+    }
+
+    @Override
+    public Collection<Note> unPosted() {
+        throw new UnsupportedOperationException("not implemented");
+    }
+}

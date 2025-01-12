@@ -22,9 +22,15 @@
  * SOFTWARE.
  */
 
+package io.github.artemget.blognote.overseer;
+
+import io.github.artemget.blognote.notes.Notes;
+
 /**
- * Tests.
+ * Watches for changes in resources.
  *
  * @since 0.1
  */
-package io.github.artemget.blognote;
+public interface Overseer {
+    Notes inspected();
+}
