@@ -31,6 +31,8 @@ import java.util.Collection;
  * Tojo notes.
  *
  * @since 0.1
+ * @todo #1:90min I suggest adding tojos db dependency and
+ *  implement {@code NtsTojos}. NtTojo could be implemented if needed. Tests are required.
  */
 public final class NtsTojos implements Notes {
     @Override
